@@ -13,7 +13,7 @@ var init_rot
 var rot_speed = rad2deg(0.1)  # 30 deg/sec
 var final_rot
 
-onready var player = get_node("test")
+onready var player = get_node("player")
 
 func _process(delta):
 	if Input.is_action_just_pressed("rotate") and is_rotating == 0:

@@ -4,6 +4,14 @@ extends KinematicBody2D
 # var a = 2
 # var b = "text"
 
+var has_left_key = false
+
+var top_solved = false
+var left_solved = false
+var bottom_solved = false
+var right_solved = false
+
+
 const UP = Vector2(0, -1)
 var motion = Vector2()
 export var speed = 200
