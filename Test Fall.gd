@@ -9,5 +9,5 @@ var motion = Vector2()
 #func _process(delta):
 #	pass
 func _physics_process(delta):
-	motion.y = 10
+	motion.y = 400
 	move_and_slide(motion)
