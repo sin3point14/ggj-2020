@@ -1125,6 +1125,9 @@ extents = Vector2( 32, 32 )
 [node name="World" type="Node2D"]
 position = Vector2( 370, 230 )
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2( -114, 26 )
@@ -1135,9 +1138,6 @@ tile_data = PoolIntArray( -1703938, 1610612741, 0, -1703937, 1610612741, 0, -176
 [node name="test" type="KinematicBody2D" parent="."]
 position = Vector2( -690, 3866 )
 script = ExtResource( 3 )
-__meta__ = {
-"_edit_group_": true
-}
 
 [node name="Sprite" type="Sprite" parent="test"]
 texture = ExtResource( 4 )
@@ -1147,3 +1147,5 @@ shape = SubResource( 112 )
 
 [node name="Camera2D" type="Camera2D" parent="test"]
 current = true
+drag_margin_h_enabled = false
+drag_margin_v_enabled = false
