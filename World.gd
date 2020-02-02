@@ -10,7 +10,7 @@ extends Node2D
 var rot = 0
 var is_rotating = false;
 var init_rot
-var rot_speed = rad2deg(0.03)  # 30 deg/sec
+var rot_speed = rad2deg(0.1)  # 30 deg/sec
 var final_rot
 
 func _process(delta):
