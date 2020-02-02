@@ -12,7 +12,7 @@ func _ready():
 var time=0
 func _process(delta):
 	time+=delta
-	if time >0.6 and get_tree().get_root().get_node("World").idx == 0 :
+	if time >0.6 and get_tree().get_root().get_node("World").idx == 3 :
 		time=0
 		shoot()
 		print('pew')

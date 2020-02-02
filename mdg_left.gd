@@ -1,5 +1,4 @@
 extends Sprite
-
 var Bullet = preload("res://bullet.tscn")
 # Declare member variables here. Examples:
 # var a = 2
@@ -12,7 +11,7 @@ func _ready():
 var time=0
 func _process(delta):
 	time+=delta
-	if time >0.6 and get_tree().get_root().get_node("World").idx == 0 :
+	if time >0.6 and get_tree().get_root().get_node("World").idx == 1:
 		time=0
 		shoot()
 		print('pew')

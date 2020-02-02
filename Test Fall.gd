@@ -16,7 +16,7 @@ var zoom_speed =2
 
 const UP = Vector2(0, -1)
 var motion = Vector2()
-export var speed = 700
+export var speed = 300
 export var g = 30
 export var jump_force = 600
 

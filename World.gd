@@ -13,6 +13,8 @@ var init_rot
 var rot_speed = rad2deg(0.1)  # 30 deg/sec
 var final_rot
 
+var idx = 0
+
 onready var player = get_node("player")
 
 func _process(delta):
@@ -20,6 +22,10 @@ func _process(delta):
 		is_rotating = 1 
 		init_rot = rot
 		final_rot = init_rot+deg2rad(90)
+		idx = idx-1
+		
+		if idx == -1:
+			idx=3
 	if is_rotating == 1:
 		if rot < init_rot + deg2rad(90):
 			var delta_rot = rot_speed * delta
@@ -34,6 +40,8 @@ func _process(delta):
 		is_rotating = -1 
 		init_rot = rot
 		final_rot = init_rot-deg2rad(90)
+		idx = (idx+1)%4
+		
 	if is_rotating == -1:
 		if rot > init_rot - deg2rad(90):
 			var delta_rot = -rot_speed * delta
