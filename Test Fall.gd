@@ -3,21 +3,22 @@ extends KinematicBody2D
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
+var health = 3
 
 var has_left_key = false
 
-var top_solved = true
-var left_solved = true
+var top_solved = false
+var left_solved = false
 var bottom_solved = false
-var right_solved = true
+var right_solved = false
 
 var zoom_speed =2
 
 const UP = Vector2(0, -1)
 var motion = Vector2()
-export var speed = 200
-export var g = 10
-export var jump_force = 400
+export var speed = 700
+export var g = 30
+export var jump_force = 600
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
@@ -35,7 +36,9 @@ func _physics_process(delta):
 	else:
 		motion.y += g
 		
-	move_and_slide(motion, UP)
+	motion = move_and_slide(motion, UP)
+	if health <= 0:
+		queue_free()
 	
 	if top_solved and bottom_solved and left_solved and right_solved:
 		g=0
@@ -45,4 +48,6 @@ func _physics_process(delta):
 		if $Camera2D.zoom.x < 12:
 			$Camera2D.zoom.x += zoom_speed * delta
 			$Camera2D.zoom.y += zoom_speed * delta
-		
+
+func hit():
+	health-=1

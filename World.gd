@@ -45,7 +45,7 @@ func _process(delta):
 			rotate(final_rot - rot)
 			player.rotate(rot - final_rot)						
 			is_rotating = 0
-			
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
