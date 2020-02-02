@@ -6,11 +6,12 @@ extends KinematicBody2D
 
 var has_left_key = false
 
-var top_solved = false
-var left_solved = false
+var top_solved = true
+var left_solved = true
 var bottom_solved = false
-var right_solved = false
+var right_solved = true
 
+var zoom_speed =2
 
 const UP = Vector2(0, -1)
 var motion = Vector2()
@@ -35,3 +36,13 @@ func _physics_process(delta):
 		motion.y += g
 		
 	move_and_slide(motion, UP)
+	
+	if top_solved and bottom_solved and left_solved and right_solved:
+		g=0
+		jump_force = 0
+		speed = 0
+		position = Vector2(1708, 3384)
+		if $Camera2D.zoom.x < 12:
+			$Camera2D.zoom.x += zoom_speed * delta
+			$Camera2D.zoom.y += zoom_speed * delta
+		
